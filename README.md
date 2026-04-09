@@ -1,196 +1,174 @@
-# 🔐 MFA Cloud Authentication System
+# 🔐 Multi-Factor Cloud Authentication System
 
-A **Multi-Factor Authentication (MFA) Cloud-Based Web Application** built using Python that enhances login security by combining **password authentication + OTP verification**.
-
-This project demonstrates how modern systems protect user accounts using multiple authentication layers instead of relying only on passwords.
+A modern, cloud-based authentication platform that enhances account security using **Multi-Factor Authentication (MFA)**, **Google OAuth**, **device tracking**, and **adaptive trust scoring** — all managed through a unified dashboard.
 
 ---
 
-## 📌 Project Description
+## 📌 Overview
 
-This project implements a secure authentication system where users must verify their identity using:
+This project provides a **secure and user-friendly authentication system** designed for real-world cloud applications. It combines:
 
-* Username & Password
-* One-Time Password (OTP)
+* Traditional email/password login
+* Social login via Google OAuth
+* Multi-Factor Authentication (MFA)
+* Device & session monitoring
+* Trust-score based risk analysis
 
-MFA is widely used in cloud platforms because it significantly reduces the risk of unauthorized access. Even if a password is compromised, an attacker cannot log in without the second authentication factor ([GitHub Docs][1]).
+The system helps detect suspicious activities early and gives users full control over their account security.
 
 ---
 
-## 🚀 Features (Based on Your Code)
+## 🚀 Key Features
 
-✅ User Registration System
-✅ Secure Login System
-✅ OTP Generation & Verification
-✅ Session Management
-✅ Basic Cloud-Based Authentication Flow
-✅ Error Handling for Invalid Login / OTP
+* 🔑 Email & Password Authentication
+* 🌐 Google OAuth Login
+* 🔐 Multi-Factor Authentication (MFA) with backup codes
+* 📊 Trust Score System (adaptive risk analysis)
+* 📱 Device Tracking & Management
+* 🕒 Session Monitoring & Control
+* ⚠️ Failed Login Attempt Alerts
+* 📜 Login History Tracking
+* 🎨 Light/Dark Theme Toggle
+* ⚙️ Account Settings Management
+
+---
+
+## 🧠 Trust Score System
+
+An intelligent **risk-based scoring mechanism**:
+
+* Each failed login attempt reduces the user's trust score
+* Gradual score drop helps identify suspicious behavior
+* Enables proactive security monitoring
+* Can be extended for adaptive authentication
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Frontend:**
+### Frontend
 
-* HTML5
-* CSS3
-* JavaScript
+* ⚛️ React
+* 📘 TypeScript
+* 🎨 Tailwind CSS
+* 🧩 shadcn/ui
 
-**Backend:**
+### Backend & Authentication
 
-* Python
-* Flask
-
-**Database:**
-
-* SQLite (Local Database)
+* ☁️ Supabase Auth
+* 🗄️ PostgreSQL (via Supabase)
 
 ---
 
-## 📂 Project Structure (Customized)
+## 🏗️ Architecture
 
-```
-MFA-CLOUD-PRO/
+### Core Components
+
+* **Frontend:** React + TypeScript UI
+* **Backend/Auth:** Supabase (Authentication + Database)
+
+### Database Tables
+
+* `profiles` → User profile data
+* `devices` → Registered user devices
+* `login_attempts` → Login logs & failed attempts
+* `user_sessions` → Active session tracking
+
+---
+
+## 🔐 Security Features
+
+* Multi-Factor Authentication (MFA)
+* Session Management (active session control)
+* Device Tracking (unknown device detection)
+* Login Attempt Logging
+* Trust Score Risk Analysis
+* OAuth-based secure login
+
+---
+
+## ⚙️ Demo Flow (Presentation Ready)
+
+1. Open application → Login page
+2. Sign in using email/password or Google OAuth
+3. View dashboard:
+
+   * Devices
+   * Failed Attempts
+   * Trust Score
+4. Show login history & failed attempt alerts
+5. Navigate to:
+
+   * Profile → Account Settings
+6. Show:
+
+   * MFA toggle
+   * Backup codes
+7. View:
+
+   * Active sessions
+   * Device management
+8. Toggle light/dark theme
+9. Logout → Login again (consistency check)
+
+---
+
+## 📂 Project Structure
+
+```id="k92nsa"
+project-root/
 │
-├── static/                # CSS, JS, Images
-├── templates/             # HTML pages (login, register, OTP)
-│   ├── login.html
-│   ├── register.html
-│   ├── otp.html
-│   └── dashboard.html
+├── src/                 # React frontend
+├── components/          # UI components
+├── pages/               # App pages (Login, Dashboard, Settings)
+├── supabase/            # Supabase config & queries
+├── styles/              # Tailwind styles
 │
-├── app.py                 # Main Flask application
-├── database.db            # SQLite database
-├── requirements.txt       # Python dependencies
-└── README.md              # Documentation
+└── README.md
 ```
 
 ---
 
-## ⚙️ How It Works
+## 🎯 Objectives
 
-1️⃣ User registers with username & password
-2️⃣ User logs in
-3️⃣ System validates credentials
-4️⃣ OTP is generated dynamically
-5️⃣ OTP is sent (email/console-based depending on your code)
-6️⃣ User enters OTP
-7️⃣ Access is granted only after successful verification
+* Provide secure authentication system
+* Simulate real-world cloud security architecture
+* Enable user-level control over sessions and devices
+* Detect and prevent suspicious login behavior
 
 ---
 
-## 🔐 Authentication Flow
+## ⚠️ Limitations
 
-```
-User → Login → Password Check → OTP Generated → OTP Verification → Access Granted
-```
-
-This layered approach ensures higher security compared to single-factor authentication.
+* Requires internet (cloud-based system)
+* Basic trust scoring (can be enhanced with AI/ML)
+* Depends on Supabase services
 
 ---
 
-## ⚙️ Installation & Setup
+## 🔮 Future Enhancements
 
-### 1️⃣ Clone Repository
-
-```bash
-git clone https://github.com/Dhruvpatel220204/MFA-CLOUD-PRO.git
-cd MFA-CLOUD-PRO
-```
-
-### 2️⃣ Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3️⃣ Run Application
-
-```bash
-python app.py
-```
-
-### 4️⃣ Open in Browser
-
-```
-http://127.0.0.1:5000/
-```
+* 🤖 AI-based anomaly detection
+* 📲 SMS/Email OTP integration
+* 🔑 Biometric authentication
+* 🌍 Multi-region deployment
+* 📊 Advanced security analytics dashboard
 
 ---
 
-## 🧪 Sample Test Flow
+## 💡 Use Cases
 
-* Register a new user
-* Login using credentials
-* Check OTP (console/email)
-* Enter OTP to access dashboard
-
----
-
-## 🔒 Security Highlights
-
-* Prevents unauthorized access
-* Adds extra layer beyond passwords
-* Reduces risk of hacking attempts
-* Implements real-world MFA concept
-
----
-
-## 🎯 Use Cases
-
-* Cloud applications
-* Banking systems
-* Secure login portals
-* Enterprise authentication
-
----
-
-## 📸 Screenshots
-
-👉 Add these:
-
-* Login Page
-* Registration Page
-* OTP Verification Page
-* Dashboard
-
----
-
-## 📌 Future Improvements
-
-🔹 Email/SMS OTP Integration (Twilio / SMTP)
-🔹 Google Authenticator (TOTP)
-🔹 Biometric Authentication
-🔹 Cloud Deployment (AWS / Azure)
-🔹 JWT Token-Based Authentication
-🔹 Role-Based Access Control
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first.
+* Cloud-based applications
+* SaaS platforms
+* Enterprise authentication systems
+* Secure login systems
 
 ---
 
 ## 👨‍💻 Author
 
 **Dhruv Patel**
-🔗 GitHub: [https://github.com/Dhruvpatel220204](https://github.com/Dhruvpatel220204)
+B.Tech CSE (Cloud Technology & Information Security)
 
 ---
 
-## ⭐ Support
-
-If you like this project, don’t forget to ⭐ the repo!
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**
-
----
-
-
-[1]: https://docs.github.com/en/enterprise-cloud%40latest/authentication/securing-your-account-with-two-factor-authentication-2fa/accessing-github-using-two-factor-authentication?utm_source=chatgpt.com "Accessing GitHub using two-factor authentication - GitHub Enterprise Cloud Docs"
